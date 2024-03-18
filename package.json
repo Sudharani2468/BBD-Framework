@@ -4,6 +4,7 @@
     "description": "",
     "main": "indexjs",
     "scripts": {
+        
         "all": "wdio run ./wdio.conf.js",
         "suite": "wdio run ./wdio.conf.js --suite",
         "spec": "wdio run ./wdio.conf.js --spec",
