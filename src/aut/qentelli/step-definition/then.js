@@ -35,3 +35,15 @@ Then(/^I verify ShadowRoot Demo page description is displayed$/, async () => {
 Then(/^I verify Shadow Root Element is displayed$/, async () => {
     await testPage.verifyShadowRootElement();
 });
+
+Then(/^I click on solutions$/, async () => {
+    await testPage.clickOnSolutions();
+});
+
+Then(/^I click on customer experience$/, async () => {
+    await testPage.clickOnCustomerExperiance();
+});
+
+Then(/^I click on talk to an expert$/, async () => {
+    await testPage.clickOnTalkToExpert();
+});

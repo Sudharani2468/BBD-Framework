@@ -11,6 +11,10 @@ dotenv.config();
 const brand = "//a[@class='navbar-brand']";
 const aboutUsNav = "//li[@id='about_us']//a[contains(text(),'About Us')]";
 const contactUsNav = "//li[@id='contact_tab']";
+const solutions = "//a[contains(text(),'Solutions')]";
+const customerExperiance = "//h4[@id='Customer_tab']";
+const verifyCustomerExperiance = "//h1[contains(text(),'Customer Experience')]";
+const talkToAnExpert = "//input[@id='edit-actions-submit']";
 
 const shadowRootDemoDescription = "//div[@class='demo-description']";
 const shadowRootDemoDescriptionTxt = "Menu UI component is with Shadow DOM enabled. The Menu's markup structure, style, and behavior in this demo are hidden and separate from other code on the page.";
@@ -94,4 +98,30 @@ export default class TestPage extends Page {
         await expect(locator).toHaveText(expect.stringContaining(shadowText));
         cucumberJson.attach(await browser.takeScreenshot(), 'image/png');
     }
+
+    // Verify Qentelli Solutions Navigation
+    async clickOnSolutions() {
+        await action.clickElement(solutions);
+        await browser.pause(5000);
+        cucumberJson.attach(await browser.takeScreenshot(), 'image/png');
+    }
+
+    // Verify Qentelli Customer Experiance Navigation
+    async clickOnCustomerExperiance() {
+        await action.clickElement(customerExperiance);
+        await browser.pause(8000);
+        await action.verifyText(verifyCustomerExperiance,"Customer Experience");
+        await browser.pause(8000);
+        cucumberJson.attach(await browser.takeScreenshot(), 'image/png');
+    }
+
+    async clickOnTalkToExpert() {
+        await action.clickElement(talkToAnExpert);
+        await browser.pause(5000);
+        //await action.verifyIsDisplayed(this.verifyCustomerExperiance);
+        cucumberJson.attach(await browser.takeScreenshot(), 'image/png');
+    }
+
 }
+
+

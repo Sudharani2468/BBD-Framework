@@ -12,3 +12,5 @@ Given(/^I navigate to the ShadowRoot Demo Page$/, async () => {
     console.log('I navigate to the ShadowRoot Demo Page');
     await testPage.navigateToShadowRootDemoPage();
 });
+
+
